@@ -1,5 +1,5 @@
 {
-	"name": "n8n-nodes-verify-email",
+	"name": "@carlos.araujo.aus/n8n-nodes-verify-email",
 	"version": "0.1.0",
 	"description": "Verify Email Node for n8n",
 	"license": "MIT",
