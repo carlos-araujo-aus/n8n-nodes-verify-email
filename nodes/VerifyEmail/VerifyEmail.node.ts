@@ -3,6 +3,8 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+const URL_API = process.env.URL_API_VERIFY_EMAIL ?? '';
+
 export class VerifyEmail implements INodeType {
 	description: INodeTypeDescription = {
         displayName: 'Verify Email',
@@ -24,14 +26,28 @@ export class VerifyEmail implements INodeType {
             },
         ],
         requestDefaults: {
-            baseURL: 'https://api.nasa.gov',
+            baseURL: URL_API,
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
             },
         },        
 		properties: [
-		// Resources and operations will go here
-		]
+            {
+                displayName: 'Email Address',
+                name: 'email',
+                type: 'string',
+                placeholder: 'Enter the email address to verify',
+                noDataExpression: true,
+                default: '',
+                routing: {
+                    request: {
+                        qs: {
+                            email: '={{ $value }}',
+                        }
+                    }
+                }
+            },           
+        ]
 	};
 }
