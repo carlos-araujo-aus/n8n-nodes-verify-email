@@ -49,7 +49,6 @@
 		"n8n-workflow": "*"
 	},
 	"dependencies": {
-		"dotenv": "^17.2.3",
 		"rimraf": "^6.1.2"
 	}
 }
