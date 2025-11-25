@@ -1,9 +1,5 @@
 import { INodeType, INodeTypeDescription, NodeConnectionTypes } from 'n8n-workflow';
-import dotenv from 'dotenv';
 
-dotenv.config();
-
-const URL_API = process.env.URL_API_VERIFY_EMAIL ?? '';
 
 export class VerifyEmail implements INodeType {
 	description: INodeTypeDescription = {
@@ -21,12 +17,12 @@ export class VerifyEmail implements INodeType {
         outputs: [NodeConnectionTypes.Main],
         credentials: [
             {
-                name: 'VerifyEmailApi',
+                name: 'verifyEmailApi',
                 required: true,
             },
         ],
         requestDefaults: {
-            baseURL: URL_API,
+            baseURL: '={{$credentials.apiUrl}}',
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',

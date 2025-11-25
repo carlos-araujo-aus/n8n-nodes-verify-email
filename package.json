@@ -1,5 +1,5 @@
 {
-	"name": "n8n-nodes-<verify-email>",
+	"name": "n8n-nodes-verify-email",
 	"version": "0.1.0",
 	"description": "",
 	"license": "MIT",
@@ -49,6 +49,7 @@
 		"n8n-workflow": "*"
 	},
 	"dependencies": {
-		"dotenv": "^17.2.3"
+		"dotenv": "^17.2.3",
+		"rimraf": "^6.1.2"
 	}
 }
